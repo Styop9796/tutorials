@@ -1,4 +1,4 @@
-#!/home/styop/VSCODE/odoo-17.0/venv/bin/python3
+#!/home/user/PycharmProjects/odoo/venv/bin/python3.11
 # -*- coding: utf8 -*-
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:

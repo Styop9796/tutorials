@@ -1,4 +1,4 @@
-#!/home/styop/VSCODE/odoo-17.0/venv/bin/python3
+#!/home/user/PycharmProjects/odoo/venv/bin/python3.11
 
 # $Id: rst2odt.py 5839 2009-01-07 19:09:28Z dkuhlman $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

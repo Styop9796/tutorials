@@ -1,4 +1,4 @@
-#!/home/styop/VSCODE/odoo-17.0/venv/bin/python3
+#!/home/user/PycharmProjects/odoo/venv/bin/python3.11
 
 # $Id: rst2pseudoxml.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: David Goodger <goodger@python.org>

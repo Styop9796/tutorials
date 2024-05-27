@@ -1,4 +1,4 @@
-#!/home/styop/VSCODE/odoo-17.0/venv/bin/python3
+#!/home/user/PycharmProjects/odoo/venv/bin/python3.11
 
 # Author:
 # Contact: grubert@users.sf.net

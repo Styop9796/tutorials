@@ -1,4 +1,4 @@
-#!/home/styop/VSCODE/odoo-17.0/venv/bin/python3
+#!/home/user/PycharmProjects/odoo/venv/bin/python3.11
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde

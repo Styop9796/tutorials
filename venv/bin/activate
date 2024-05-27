@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/styop/VSCODE/odoo-17.0/venv"
+VIRTUAL_ENV="/home/user/PycharmProjects/odoo/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
