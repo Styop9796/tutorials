@@ -8,9 +8,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="estate_property_tree_view" model="ir.ui.view">
-        <field name="name">estate.estate_property.tree</field>
-        <field name="model">estate.estate_property</field>
+    <record id="estate_property_type_tree_view" model="ir.ui.view">
+        <field name="name">estate.property.type.tree</field>
+        <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
             <tree string="Estate Property Types">
                 <field name="name" string="Type" />

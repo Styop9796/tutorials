@@ -13,7 +13,10 @@
         <field name="arch" type="xml">
             <tree string="Estate Properties">
                 <field name="name" string="Title" />
+                <field name="tag_ids" />
+                <field name='salesperson_id' />
                 <field name="postcode"/>
+                <field name="type_id"/>
                 <field name="bedrooms"/>
                 <field name="living_area" string="Living area(sqm)"/>
                 <field name="expected_price"/>
@@ -40,14 +43,21 @@
         <field name="arch" type="xml">
             <form string="Estate Properties">
                 <sheet>
-                    
+                            <div>
                         
-                            <field name="name" string="Title" style="font-size: xx-large;"/>
-                        
+                                <field name="name"  style="font-size: xx-large;"/>
+                            </div>
+                            <div>    
+                                <field name="tag_ids"  widget="many2many_tags" />
+                            </div>
 
                             <group>
+                            
                                 <group>
+                                <field name='salesperson_id' />
+
                                 <field name="postcode"/>
+                                <field name="type_id"/>
                                 <field name="date_availability"/>
                                 </group>
                                 <group>
@@ -72,8 +82,31 @@
                                             <field name="state"/>
                                         </group>
                                 </page>
+
+
+
+                                <page string="Offers">
+                                    <tree string="Offers" editable="bottom">
+                                        <field name="offer_ids" >    
+                                            <tree>
+                                                <!-- Define fields to display in the tree view -->
+                                                <field name="price"/>
+                                                
+                                                <field name="partner_id"/>
+                                                <field name="status"/>
+                                            </tree>
+                                        </field>
+                                    </tree>
+                                </page>
+
+
+
                             </notebook>
                             
+
+                            
+                                
+                           
                      
                 </sheet>
             </form>
@@ -87,8 +120,11 @@
         <search>
             <field name="name" string="Title"/>
             <field name="postcode"/>
+            <field name="type_id"/>
             <field name="expected_price"/>
             <field name="bedrooms"/>
+            <field name='salesperson_id' />
+
             <field name="living_area"/>
             <field name="facades"/>
             <filter name="filter_expected_price" domain="[('expected_price', '>=', 100000)]" string="Expected Price >= 100000"/>
