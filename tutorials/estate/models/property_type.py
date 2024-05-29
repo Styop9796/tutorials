@@ -8,3 +8,10 @@ class PropertyType(models.Model):
 
 
     name = fields.Char(string='Property Type',required=True)
+
+
+
+    _sql_constraints = [
+        ('check_type_name', 'UNIQUE(name)','Type exists')
+
+      ]

@@ -42,6 +42,11 @@
         <field name="model">estate.estate_property</field>
         <field name="arch" type="xml">
             <form string="Estate Properties">
+                <header>
+                    <button name="set_as_sold" type="object" string="SOLD" class="oe_highlight" />
+                    <button name="set_as_canceled" type="object" string="Cancel"/>
+
+                </header>
                 <sheet>
                             <div>
                         
@@ -80,6 +85,8 @@
                                             <field name="garden_orientation"/>
                                             <field name="active"/>
                                             <field name="state"/>
+                                            <field name="total_area" />
+                                            <field name="best_offer" />
                                         </group>
                                 </page>
 
@@ -93,12 +100,24 @@
                                                 <field name="price"/>
                                                 
                                                 <field name="partner_id"/>
+                                                <button name="accept_offer" string="Accept" states="draft" type="object" icon="fa-check"/>
+                                                <button name="refuse_offer" string="Refuse" states="draft,open" type="object" icon="fa-times"/>
+
                                                 <field name="status"/>
                                             </tree>
                                         </field>
                                     </tree>
                                 </page>
 
+
+
+                                <page string="Other Info">
+                                    <group>
+                                        <field name="salesperson_id" />
+                                        <field name="buyer_id" />
+
+                                    </group>
+                                </page> 
 
 
                             </notebook>
