@@ -7,7 +7,8 @@ from odoo.tools import float_compare, float_is_zero
 class EstateProperty(models.Model):
     _name='estate.estate_property'
     _description = 'Estate properties table'
-    
+    _order = "sequence ASC , id DESC"
+
 
     name= fields.Char(string='Property name',required=True,help='Name of the property')
     description = fields.Text(string='Description of proberty')
@@ -45,6 +46,7 @@ class EstateProperty(models.Model):
     offer_ids = fields.One2many('estate.property.offer','property_id',string='Offers')
     total_area = fields.Integer(string='Total area',compute='_compute_total_area')
     best_offer = fields.Float(string='Best Offer',compute='_compute_best_offer')
+    sequence = fields.Integer(string='Sequence', default=1, help="Used to order stages. Lower is better.")
 
 
     _sql_constraints = [
