@@ -57,3 +57,27 @@ class PropertyOffer(models.Model):
             record.property_id.state='offer received'
             record.status = 'refused'
         return True
+    
+    @api.model_create_multi
+    def create(self, vals_list):
+        property_ids_with_lower_price = []
+        for new_record in vals_list:
+            property_id = new_record.get('property_id')
+            if property_id:
+                property_id = int(property_id)
+                existing_offer = self.env['estate.property.offer'].search([('property_id', '=', property_id)], order='price desc', limit=1)
+        
+            if existing_offer and new_record.get('price', 0) <= existing_offer.price:
+                # Store property_id with lower priced offers in a list
+                property_ids_with_lower_price = [existing_offer.property_id.id]
+            
+        if property_ids_with_lower_price:
+            # Raise an error if there are offers with lower prices
+            raise UserError("Cannot create offer: The price should be higher than the existing offer.")
+        
+        # Set property state to 'offer received' for all new records
+        property_objs = self.env['estate.estate_property'].browse(property_id for vals in vals_list)
+        property_objs.state=  'offer received'
+        
+        # Create the offers
+        return super(PropertyOffer, self).create(vals_list)

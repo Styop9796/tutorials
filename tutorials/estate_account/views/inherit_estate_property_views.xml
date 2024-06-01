@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<odoo>
+  
+    <record id="model_x_inherit_estate_property" model="ir.model">
+        <field name="name">x_inherit_estate_property</field>
+        <field name="model">x_inherit_estate_property</field>
+        
+    </record>
+
+
+</odoo>

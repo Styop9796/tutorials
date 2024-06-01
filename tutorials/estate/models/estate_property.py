@@ -82,6 +82,8 @@ class EstateProperty(models.Model):
             
 
     def set_as_sold(self): #can't set as sold if canceled
+        print('gssssssssssssssssssss')
+
         for record in self:
             if record.state == "canceled":
                 raise UserError("Can't set as sold: Record is already canceled.")
@@ -109,3 +111,23 @@ class EstateProperty(models.Model):
             ninety_percent_of_expected_price = record.expected_price * 0.9
             if float_compare(record.selling_price, ninety_percent_of_expected_price, precision_digits=2) == -1:
                 raise models.ValidationError("Selling price cannot be lower than 90% of the expected price.")
+            
+    def action_view_offers(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Offers',
+            'view_mode': 'tree,form',
+            'res_model': 'estate.property.offer',
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id},
+        }
+    
+
+
+
+    @api.ondelete(at_uninstall=False)
+    def _prevent_delete(self):
+        for record  in self:
+            if record.state not in ['new', 'canceled']:
+                raise UserError("You cannot delete a property that is not in 'New' or 'Canceled' state.")
+            

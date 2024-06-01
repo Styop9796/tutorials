@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  
+    <record id="estate_property_Inherit_action" model="ir.actions.act_window">
+        <field name="name">Estate Properties</field>
+        <field name="res_model">estate.estate_property</field>
+        <field name="view_mode">tree</field>
+
+    </record>
+
+
+  <menuitem id="estate_property_manu_root" name="INVOICEEEEEEEEEE">
+            <menuitem id="estate_property_menu_item" name="Estate Properties" action="estate_property_Inherit_action"/>
+
+    </menuitem>
+
+
+
+</odoo>

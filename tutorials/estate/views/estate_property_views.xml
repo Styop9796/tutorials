@@ -55,8 +55,7 @@
                 <sheet>
                             <div>
                                 <field name="name"  style="font-size: xx-large;"/>
-                                <button name="set_as_sold" icon="fa-money" type="object" class="oe_stat_button" title="Offers"  />
-                                <field name = "type_id" />
+                                <button name="action_view_offers" type="object" class="oe_stat_button" icon="fa-money" title="Offers"/>
                             </div>
                             <div>    
                                 <field name="tag_ids"  widget="many2many_tags" options="{'color_field': 'color'}" />

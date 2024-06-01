@@ -16,6 +16,7 @@
             <tree string="Estate Property Tags" editable="top" >
                 <field name="name" string="Tag" />
                 
+                
             </tree>
         </field>
     </record>
