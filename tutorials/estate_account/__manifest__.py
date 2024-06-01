@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 {
     'name': "Invoicing Property",
     'description': """
@@ -5,9 +7,7 @@
                     """,
       'data':[
         'views/inherit_view.xml',
-        'views/inherit_estate_property_views.xml',
-
-        'security/ir.model.access.csv'
+        'views/inherit_estate_property_views.xml'
     ],
     'depends': ['estate', 'account'],
     'installable': True,
