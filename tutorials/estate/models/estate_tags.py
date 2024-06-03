@@ -8,7 +8,7 @@ class EstateTags(models.Model):
     _order = "name ASC"
 
     name=fields.Char(string='Property Tags',required=True)
-    color = fields.Integer(string='Color')
+    color = fields.Integer(string='Color', default=7)
     
     _sql_constraints = [
         ('check_tag_name', 'UNIQUE(name)','Tag exists')
