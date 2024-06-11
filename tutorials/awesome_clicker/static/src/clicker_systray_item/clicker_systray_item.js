@@ -1,19 +1,34 @@
 /** @odoo-module */
 
+import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-import { Component, useState } from "@odoo/owl";
+import { useService } from "@web/core/utils/hooks";
+import { useClicker } from "../clicker_hook";
+
 
 export class ClickerSystray extends Component {
     static template = "awesome_clicker.ClickerSystray";
     static props = {};
 
     setup() {
-        this.state = useState({ counter: 0 });
+        this.action = useService("action");
+        this.clicker = useClicker();
     }
-
+    
     increment() {
-        this.state.counter++;
-    }
+        this.state.counter += 9;
+        }
+
+
+
+        openClientAction() {
+            this.action.doAction({
+                type: "ir.actions.client",
+                tag: "awesome_clicker.client_action",
+                target: "new",
+                name: "Clicker Game"
+            });
+        }
 
 }
 
